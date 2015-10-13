@@ -306,3 +306,15 @@ var users = [
 var userNew = _.pluck(users, 'value');
 
 console.log(userNew);
+
+let jordan = require('./lib/jordan');
+
+let jadd = jordan.add(1,2);
+
+let jadd2 = jordan.add2(1,2);
+
+console.log(jadd2);
+
+jordan.addc(5, 6, res => {
+  console.log('hello', res);
+});
