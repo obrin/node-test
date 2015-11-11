@@ -303,18 +303,24 @@ var users = [
   }
 ]
 
-var userNew = _.pluck(users, 'value');
+import { Jordan, Son } from './lib/jordanClass';
 
-console.log(userNew);
+let Jyong = new Jordan();
 
-let jordan = require('./lib/jordan');
+Jyong.addPromise(1, 1)
+  .then(res => {
+    console.log('promise class', res);
+  })
 
-let jadd = jordan.add(1,2);
+Jyong.addAsync(1, 1)
+  .then(res => console.log('async await class', res));
 
-let jadd2 = jordan.add2(1,2);
+let Yong = new Son();
 
-console.log(jadd2);
+Yong.minusPromise(2, 1)
+  .then(res => console.log('minus', res));
 
-jordan.addc(5, 6, res => {
-  console.log('hello', res);
-});
+Yong.addAsync(2, 2)
+  .then(res => console.log('son async', res))
+  .catch(error => console.log('error', error));
+

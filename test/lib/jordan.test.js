@@ -1,6 +1,11 @@
 let jordan = require('../../lib/jordan');
-let expect = require('chai').expect;
 let sinon = require('sinon');
+
+import chai from 'chai';
+import chaiAsPromised from 'chai-as-promised';
+
+chai.use(chaiAsPromised);
+const expect = chai.expect;
 
 describe('Jordan library', () => {
 
@@ -41,7 +46,7 @@ describe('Jordan library', () => {
 
     it('should always pass a value to add', done => {
       let mock = sinon.mock(jordan);
-      mock.expects('add').twice().withExactArgs(1, 1);
+      mock.expects('add').twice();
 
       jordan.addc(1, 1, res => {
         jordan.addc(1, 1, result => {
@@ -49,6 +54,16 @@ describe('Jordan library', () => {
           done();
         });
       });
+    })
+  })
+
+  describe('Add values with promises', () => {
+    it('should return a promised value', done => {
+      expect(jordan.addp(1,1)).to.eventually.equal(2).notify(done);
+    })
+
+    it('should async await for next promise', done => {
+      expect(jordan.addasync(1,1)).to.eventually.equal(4).notify(done);
     })
   })
 })

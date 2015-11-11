@@ -5,7 +5,7 @@
   "scripts": {
     "start": "nodemon ./bin/www",
     "start-prod": "NODE_ENV=production node ./bin/www",
-    "test": "./node_modules/.bin/mocha -R spec --recursive --compilers js:babel/register -w"
+    "test": "./node_modules/.bin/mocha -R spec --recursive --require mocha-babel -w"
   },
   "dependencies": {
     "bluebird": "^2.10.1",
@@ -25,6 +25,7 @@
   "devDependencies": {
     "babel": "^5.8.23",
     "chai": "^3.3.0",
+    "chai-as-promised": "^5.1.0",
     "mocha": "^2.3.3",
     "nodemon": "^1.7.1",
     "sinon": "^1.17.1"
