@@ -8,6 +8,11 @@
     "test": "./node_modules/.bin/mocha -R spec --recursive --require mocha-babel -w"
   },
   "dependencies": {
+    "archiver": "^0.20.0",
+    "async": "^1.5.0",
+    "babel": "^6.3.13",
+    "babel-core": "^6.3.15",
+    "babel-polyfill": "^6.3.14",
     "bluebird": "^2.10.1",
     "body-parser": "~1.13.2",
     "co": "^4.6.0",
@@ -23,7 +28,6 @@
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
-    "babel": "^5.8.23",
     "chai": "^3.3.0",
     "chai-as-promised": "^5.1.0",
     "mocha": "^2.3.3",
